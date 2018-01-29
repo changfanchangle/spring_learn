@@ -3,6 +3,36 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-       <bean id="defBean001" class="learn.bean.bean_001" ></bean>
-       <bean id="defBean002" class="learn.bean.bean_002" ></bean>
+       <!-- run -->
+       <!-- 对象自带构造方法 -->
+       <bean id="defBean" class="learn.bean.beanObj" ></bean>
+       <!-- 静态工厂方法方法 -->
+       <bean id="defBean_factory_static" class="learn.bean.beanObjFactory" factory-method="getStaticBean"></bean>
+       <!-- 实例工厂方法方法 -->
+       <bean id="defBean_factory" class="learn.bean.beanObjFactory"></bean>
+       <bean id="defBean_02" factory-bean="defBean_factory" factory-method="getBean"></bean>
+
+       <!-- 单例模式 -->
+       <bean id="defBean_singleton" class="learn.bean.beanObj" scope="singleton"></bean>
+       <!-- 多例模式 -->
+       <bean id="defBean_prototype" class="learn.bean.beanObj" scope="prototype"></bean>
+
+       <!-- 构造器参数注入 -->
+       <bean id="defBeanArg001" class="learn.bean.beanObj" >
+              <constructor-arg name="name" value="constructor-arg"></constructor-arg>
+       </bean>
+       <!-- 属性参数注入 -->
+       <bean id="defBeanArg002" class="learn.bean.beanObj" >
+              <property name="name" value="property"></property>
+       </bean>
+       <!-- 属性注入其他对象 -->
+       <bean id="defBeanSub" class="learn.bean.beanObjSub" ></bean>
+       <bean id="defBeanArg003" class="learn.bean.beanObj" >
+              <property name="subobj" ref="defBeanSub"></property>
+       </bean>
+
+
+
+       <!-- run003 -->
+
 </beans>

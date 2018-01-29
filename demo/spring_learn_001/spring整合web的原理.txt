@@ -1,0 +1,6 @@
+1，服务器启动的时候servletContext对象创建
+2，使用监听器(实现ServletContextListener的接口)，监听servletContext的创建
+（spring中，直接使用org.springframework.web.context.ContextLoaderListener即可）
+3，在其创建的时候（服务器启动的时候），读取相关的配置文件信息，对spring的配置对象进行创建
+4，其对象创建到servletContext的域里边（setAttribute）
+5，使用的时候，读取（getAttribute）

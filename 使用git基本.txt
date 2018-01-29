@@ -1,0 +1,17 @@
+
+初始化设置
+git config --global user.name "changfanchangle"
+git config --global user.email "66606419"
+
+建立空间
+git init spring_learn
+cd spring_learn
+
+初始化取得文件
+git remote add origin https://github.com/changfanchangle/spring_learn.git
+git pull origin master 
+
+提交修改
+git add .
+git commit -m “安装教程测试”
+git push origin master  
